@@ -35,10 +35,12 @@ install:
   # build
   - "python setup.py build"
 
+artifacts:
+  - path: 'build\exe.linux-x86_64-3.7\app'
+    name: app
+
 deploy:
   release: appveyor-test-v$(APPVEYOR_BUILD_VERSION)
   description: 'New release'
   provider: GitHub
-  artifacts:
-    - path: 'build\exe.linux-x86_64-3.7\app'
-      name: app
+  artifact: app
