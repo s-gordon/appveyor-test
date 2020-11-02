@@ -40,7 +40,7 @@ deploy:
   description: 'New release'
   provider: GitHub
   artifact:
-    path: build/exe*/app
+    path: build
     name: app
   on:
     branch: master
