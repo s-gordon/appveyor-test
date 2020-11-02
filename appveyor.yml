@@ -39,6 +39,9 @@ deploy:
   release: appveyor-test-v$(APPVEYOR_BUILD_VERSION)
   description: 'New release'
   provider: GitHub
+  artifacts:
+    path: build\exe*
+    name: app
   on:
     branch: master
     APPVEYOR_REPO_TAG: true
