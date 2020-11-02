@@ -13,9 +13,6 @@ environment:
 
 install:
 
-  # set python version
-  - SET PATH=%PYTHON%;%path%
-
   - "echo %PYTHON%"
 
   # check that the correct python version is being used
