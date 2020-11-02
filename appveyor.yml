@@ -40,8 +40,8 @@ deploy:
   description: 'New release'
   provider: GitHub
   artifacts:
-    path: build\exe*
-    name: app
+    - path: build\exe*
+      name: app
   on:
-    branch: master
-    APPVEYOR_REPO_TAG: true
+    - branch: master
+      APPVEYOR_REPO_TAG: true
