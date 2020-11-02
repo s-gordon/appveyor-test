@@ -3,10 +3,10 @@ version: '{branch}--{build}'
 environment:
 
   matrix:
-    - TOXENV: py38
-      PYTHON: "C:\\Python3.7"
+    - TOXENV: py37
       PYTHON_VERSION: "3.7"
       PYTHON_ARCH: "64"
+      # PYTHON: "C:\\Python3.7"
 
 install:
 
