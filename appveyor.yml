@@ -34,4 +34,4 @@ install:
   - "python -m pip install -r requirements_dev.txt"
 
   # build
-  - "python -m python setup.py build"
+  - "python setup.py build"
