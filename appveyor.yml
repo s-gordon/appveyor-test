@@ -3,7 +3,8 @@ version: '{branch}--{build}'
 environment:
 
   matrix:
-    - PYTHON_VERSION: "3.8"
+    - TOXENV: "py38"
+      PYTHON_VERSION: "3.8"
       PYTHON_ARCH: "64"
 
 
