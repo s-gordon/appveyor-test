@@ -4,10 +4,9 @@ environment:
 
   matrix:
     - TOXENV: py38
-      PYTHON: "C:\Python38"
-      PYTHON_VERSION: "3.8"
+      PYTHON: "C:\\Python3.7"
+      PYTHON_VERSION: "3.7"
       PYTHON_ARCH: "64"
-
 
 install:
 
@@ -15,13 +14,13 @@ install:
   - SET PATH=%PYTHON%;%path%
 
   # check that the correct python version is being used
-  - "python --version"
+  - "%PYTHON%\\python.exe --version"
 
   # enforce the latest version of pip
-  - "python -m pip install --upgrade pip"
+  - "%PYTHON%\\python.exe -m pip install --upgrade pip"
 
   # install build dependencies
-  - "pip install -r requirements_dev.txt"
+  - "%PYTHON%\\python.exe -m pip install -r requirements_dev.txt"
 
   # build
-  - "python setup.py build"
+  - "%PYTHON%\\python.exe -m python setup.py build"
