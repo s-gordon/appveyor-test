@@ -38,9 +38,3 @@ install:
 artifacts:
   - path: 'build\exe.linux-x86_64-3.7\app'
     name: app
-
-deploy:
-  release: appveyor-test-v$(APPVEYOR_BUILD_VERSION)
-  description: 'New release'
-  provider: GitHub
-  artifact: app
