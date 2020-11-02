@@ -13,14 +13,16 @@ install:
   # set python version
   - SET PATH=%PYTHON%;%path%
 
+  - "echo %PYTHON%"
+
   # check that the correct python version is being used
-  - "%PYTHON%\\python.exe --version"
+  - "%PYTHON%\\python --version"
 
   # enforce the latest version of pip
-  - "%PYTHON%\\python.exe -m pip install --upgrade pip"
+  - "%PYTHON%\\python -m pip install --upgrade pip"
 
   # install build dependencies
-  - "%PYTHON%\\python.exe -m pip install -r requirements_dev.txt"
+  - "%PYTHON%\\python -m pip install -r requirements_dev.txt"
 
   # build
-  - "%PYTHON%\\python.exe -m python setup.py build"
+  - "%PYTHON%\\python -m python setup.py build"
