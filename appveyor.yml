@@ -40,7 +40,7 @@ deploy:
   description: 'New release'
   provider: GitHub
   artifacts:
-    - path: 'build\exe*'
+    - path: 'build/exe.linux-x86_64-3.7'
       name: app
   on:
     - branch: master
