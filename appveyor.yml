@@ -1,3 +1,6 @@
+image:
+  - Ubuntu
+
 version: '{branch}--{build}'
 
 environment:
