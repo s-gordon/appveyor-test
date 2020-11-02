@@ -36,5 +36,5 @@ install:
   - "python setup.py build"
 
 artifacts:
-  - path: 'build\exe*\app'
+  - path: 'build\*\app*'
     name: app
