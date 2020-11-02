@@ -3,12 +3,17 @@ version: '{branch}--{build}'
 environment:
 
   matrix:
-    - PYTHON: "C:\Python38"
+    - TOXENV: py38
+      PYTHON: "C:\Python38"
       PYTHON_VERSION: "3.8"
       PYTHON_ARCH: "64"
 
 
 install:
+
+  # set python version
+  - SET PATH=%PYTHON%;%path%
+
   # check that the correct python version is being used
   - "python --version"
 
