@@ -42,6 +42,3 @@ deploy:
   artifacts:
     - path: 'build/exe.linux-x86_64-3.7'
       name: app
-  on:
-    - branch: master
-      APPVEYOR_REPO_TAG: true
