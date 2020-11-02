@@ -1,7 +1,7 @@
 image:
   - Ubuntu
-  # - Visual Studio 2019
-  # - macos
+  - Visual Studio 2019
+  - macos
 
 stack: python 3.7
 
@@ -36,5 +36,5 @@ install:
   - "python setup.py build"
 
 artifacts:
-  - path: 'build\exe.linux-x86_64-3.7\app'
+  - path: 'build\exe*\app'
     name: app
