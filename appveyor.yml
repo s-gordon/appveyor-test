@@ -1,20 +1,27 @@
 image:
   - Ubuntu
-  - Visual Studio 2019
-  - macos
-
-stack: python 3.7
 
 version: '{branch}--{build}'
 
-environment:
+platform:
+  - x64
 
-  PY_DIR: C:\Python37-x64
+environment:
+  # PY_DIR: C:\Python37-x64
 
   matrix:
-    - TOXENV: py37
-      PYTHON_VERSION: "3.7"
+    # ubuntu python 2.7
+    - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu
+      PYTHON: "2.7"
       PYTHON_ARCH: "64"
+
+    # ubuntu python 3
+    - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu
+      PYTHON: "3.6"
+      PYTHON_ARCH: "64"
+
+
+stack: python %PYTHON%
 
 init:
   - cmd: set PATH=%PY_DIR%;%PY_DIR%;%PATH%
