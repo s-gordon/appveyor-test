@@ -5,6 +5,8 @@ platform:
 
 environment:
 
+  CMD_IN_ENV: "cmd /E:ON /V:ON /C .\\ci\\run_with_env.cmd"
+
   matrix:
     # windows python 3.7
     - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
