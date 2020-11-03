@@ -1,6 +1,3 @@
-image:
-  - Ubuntu
-
 version: '{branch}--{build}'
 
 platform:
@@ -25,10 +22,13 @@ stack: python %PYTHON%
 
 init:
   - cmd: set PATH=%PY_DIR%;%PY_DIR%;%PATH%
+  - sh: export PATH=%CONDA_INSTALL_LOCN%;%CONDA_INSTALL_LOCN%/Scripts;%PATH%
 
 build: off
 
 install:
+
+  - "conda --version"
 
   # check that the correct python version is being used
   - "python --version"
