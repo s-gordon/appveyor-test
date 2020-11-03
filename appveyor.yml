@@ -35,7 +35,7 @@ install:
   - cmd: "python -m pip install -r requirements_dev.txt"
 
   # build
-  - cmd: "python -m pyinstaller --onefile app/app.py"
+  - cmd: "pyinstaller --onefile app/app.py"
 
 artifacts:
   - path: 'dist\app*'
