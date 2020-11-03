@@ -10,9 +10,8 @@ environment:
   matrix:
     # windows python 3.7
     - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
-      PYTHON: "3.7"
+      PYTHON: C:\Python37-x64
       PYTHON_ARCH: "64"
-      PY_DIR: C:\Python37-x64
 
 
 # stack: python %PYTHON%
@@ -23,7 +22,7 @@ init:
 
 install:
 
-  - "set PATH=%PY_DIR%;%PY_DIR\\Scripts;%PATH%"
+  - SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%"
   - ECHO %PYTHON% %PYTHON_VERSION% %PYTHON_ARCH% %PATH%
 
   # check that the correct python version is being used
