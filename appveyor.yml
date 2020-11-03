@@ -5,12 +5,11 @@ platform:
 
 environment:
 
-  CMD_IN_ENV: "cmd /E:ON /V:ON /C .\\ci\\run_with_env.cmd"
-
   matrix:
     # windows python 3.7
     - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
-      PYTHON: C:\Python37-x64
+      PYTHON_VERSION: "3.7"
+      MINICONDA: C:\Miniconda3
       PYTHON_ARCH: "64"
 
 
@@ -19,20 +18,24 @@ environment:
 build: off
 
 init:
+  - cmd: "ECHO %PYTHON_VERSION% %MINICONDA%"
 
 install:
 
-  - SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%"
+  - SET PATH=%MINICONDA%;%MINICONDA%\\Scripts;%PATH%"
   - ECHO %PYTHON% %PYTHON_VERSION% %PYTHON_ARCH% %PATH%
 
+  - cmd: conda config --set always_yes yes
+  - cmd: conda update -q conda
+  - cmd: conda info -a
+  - cmd: "conda create -q -n test-environment python=%PYTHON_VERSION% pyinstaller"
+  - cmd: activate test-environment
+  
   # check that the correct python version is being used
   - cmd: "python --version"
 
   # enforce the latest version of pip
   - cmd: "python -m pip install --upgrade pip"
-
-  # install build dependencies
-  - cmd: "python -m pip install -r requirements_dev.txt"
 
   # build
   - cmd: "pyinstaller --onefile app/app.py"
