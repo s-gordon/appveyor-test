@@ -11,8 +11,6 @@ environment:
       TARGET: x86_64-windows-msvc
 
 
-# stack: python %PYTHON%
-
 build: off
 
 init:
