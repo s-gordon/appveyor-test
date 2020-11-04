@@ -35,4 +35,4 @@ install:
 
 artifacts:
   - path: 'dist\app*exe'
-    name: app_%TARGET%.exe
+    name: app
